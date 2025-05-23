@@ -1,7 +1,9 @@
 # BankLoanApproval
 AI project for approving loans
 
-Use python 3.7 or later
+Dataset from Kaggle: https://www.kaggle.com/datasets/vikramamin/bank-loan-approval-lr-dt-rf-and-auc/data
+
+Use python 3.7 or later. 
 Uses the following Libraries
 - pandas
 - numpy
