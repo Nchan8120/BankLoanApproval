@@ -13,3 +13,4 @@ Uses the following Libraries
 - keras
 - scikit-learn
 - joblib
+- streamlit
