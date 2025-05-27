@@ -4,7 +4,7 @@ from sklearn.preprocessing import StandardScaler
 import joblib
 
 # Load model and scaler
-model = load_model("bankloan_model.keras")
+model = load_model("bankloan_model_tuned.keras")
 scaler = joblib.load("scaler.pkl")
 
 # Define feature prompts
