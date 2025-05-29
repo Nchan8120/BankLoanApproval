@@ -21,6 +21,10 @@ def load_keras_model(model_path):
 def load_scaler():
     return joblib.load("scaler.joblib")
 
+# Function to format 0/1 to No/Yes
+def format_yes_no(value):
+    return "Yes" if value == 1 else "No"
+
 scaler = load_scaler()
 
 st.title("🏦 Bank Loan Approval Predictor")
@@ -44,10 +48,10 @@ family = st.selectbox("Family Size", options=[1, 2, 3, 4])
 ccavg = st.number_input("Credit Card Average Spending ($k)", value=1.0)
 education = st.selectbox("Education", options=[1, 2, 3], format_func=lambda x: {1: "Highschool", 2: "Undergraduate", 3: "Graduate"}[x])
 mortgage = st.number_input("Mortgage Amount ($k)", value=0.0)
-securities_account = st.selectbox("Has Securities Account?", options=[0, 1])
-cd_account = st.selectbox("Has CD Account?", options=[0, 1])
-online = st.selectbox("Uses Online Banking?", options=[0, 1])
-creditcard = st.selectbox("Has Credit Card?", options=[0, 1])
+securities_account = st.selectbox("Has Securities Account?", options=[0, 1], format_func=format_yes_no)
+cd_account = st.selectbox("Has CD Account?", options=[0, 1],format_func=format_yes_no)
+online = st.selectbox("Uses Online Banking?", options=[0, 1],format_func=format_yes_no)
+creditcard = st.selectbox("Has Credit Card?", options=[0, 1],format_func=format_yes_no)
 
 # Predict button
 if st.button("Predict Loan Approval"):
